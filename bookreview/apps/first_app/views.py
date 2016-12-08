@@ -50,3 +50,10 @@ def delete_review(request, review_id):
 
 def comments(request):
 	return render(request, "first_app/comments.html")
+
+
+def add_comment(request):
+	return render(request, "first_app/comments.html")
+
+def delete_comment(request):
+	return render(request, "first_app/comments.html")

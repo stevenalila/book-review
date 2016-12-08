@@ -17,6 +17,6 @@ class BookReview(models.Model):
 
 class Comment(models.Model):
 	author = models.ForeignKey('auth.User', related_name='comments')
-	review = models.ForeignKey('Review', related_name='comments')
+	review = models.ForeignKey('BookReview', related_name='comments')
 	timestamp = models.DateTimeField(auto_now_add=True)	
 	text = models.TextField()
