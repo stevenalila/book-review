@@ -7,21 +7,21 @@ from .forms import BookReviewForm
 
 # Create your views here.
 def index(request):
-	return render(request, "first_app/index.html")
+	return render(request, "index.html")
 
 def registration(request):
-	return render(request, "first_app/registration.html")
+	return render(request, "registration.html")
 
 def login(request):
-	return render(request, "first_app/login.html")
+	return render(request, "login.html")
 
 @login_required
 def reviews(request):
-	return render(request, "first_app/reviews.html")
+	return render(request, "reviews.html")
 
 @login_required
 def review(request):
-    return render(request, "first_app/review.html")
+    return render(request, "reviews.html")
 
 @login_required
 def create_review(request):
@@ -37,7 +37,7 @@ def create_review(request):
             book_review.save()
             return HttpResponseRedirect(book_review.get_absolute_url())
 
-    return render(request, "first_app/create_review.html", {'form': form})
+    return render(request, "create_review.html", {'form': form})
 
 @login_required
 def delete_review(request, review_id):
@@ -46,14 +46,14 @@ def delete_review(request, review_id):
         review.delete()
         return HttpResponseRedirect('/reviews/')
         
-    return render(request, "first_app/delete_review.html")
+    return render(request, "delete_review.html")
 
 def comments(request):
-	return render(request, "first_app/comments.html")
+	return render(request, "comments.html")
 
 
 def add_comment(request):
-	return render(request, "first_app/comments.html")
+	return render(request, "comments.html")
 
 def delete_comment(request):
-	return render(request, "first_app/comments.html")
+	return render(request, "comments.html")
