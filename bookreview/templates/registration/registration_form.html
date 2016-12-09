@@ -1,8 +1,13 @@
-{% extends "base.html" %}
-{% block content %}
-<h1>Register!</h1>
-<form action="/accounts/register/" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-</form>
-{% endblock %}
+<!Doctype html>
+	<html>
+	<head>
+		<title>Form</title>
+	</head>
+	<body>
+		<form action="/accounts/register/" method="">{% csrf_token %}
+    	<label for="your_name">Your name: </label>
+    	<input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+    	<input type="submit" value="OK">
+    	</form>
+    </body>
+    </html>
